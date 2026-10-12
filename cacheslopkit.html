@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html manifest="slopkit.manifest">
+<head>
+<meta charset="utf-8">
+<title>PS4 7.00---13.52 fw GoldHen By OGH</title>
+<!-- Lien unique vers le fichier CSS localisé à la racine -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<script>
+history.replaceState(null,null,'index.html');var histlength=history.length;history.go(-histlength);
+
+function DLProgress(e){
+    Percent=(Math.round(e.loaded / e.total * 100));
+    window.msgs.innerHTML = "INSTALLING OFFLINE CACHE: " + Percent + "%";
+}
+
+/* Automatisation complète : Rechargement transparent dès la fin de l'installation */
+function DisplayCacheProgress(){
+    window.msgs.innerHTML = "CACHE INSTALLED SUCCESSFULLY ✔";
+    setTimeout(function(){
+        window.msgs.innerHTML = "LAUNCHING GOLDHEN... PLEASE WAIT";
+        setTimeout(function(){
+            window.location.reload(); // Recharge la page automatiquement pour exécuter le jailbreak
+        }, 1000);
+    }, 1500);
+}
+
+window.applicationCache.addEventListener("progress",DLProgress,false);
+window.applicationCache.oncached=function(e){DisplayCacheProgress();};
+window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
+window.applicationCache.onerror=function(e){window.msgs.innerHTML="ERROR INSTALLING CACHE! - CLEAR AND RE-OPEN YOUR BROWSER ...";};
+</script>
+
+<div id="main-container">
+    <div>
+        <h1>PS4 7.00---13.52 FW GOLDHEN BY OGH</h1>
+        <hr>
+    </div>
+    
+    <!-- Ligne de statut principale (Mêmes marges que l'index pour préserver l'espace) -->
+    <h1 id="msgs" style="font-size: 30px; margin-top: 77px; margin-bottom: 455px;">STARTING CACHE INSTALLATION...</h1>
+
+    <!-- Bloc QR Code avec balise HTML directe et cœur rétro compatible (♥) -->
+    <div id="qr-container">
+        <div class="qr-box">
+            <img src="qrcode.png" class="qr-image" alt="PayPal QR Code">
+            <p>THANKS FOR YOUR SUPPORT <span style="color: #ff3333; font-size: 12px; text-shadow: 0 0 5px #ff0000;">♥</span></p>
+        </div>
+    </div>
+
+    <!-- Section exclusive de remerciements ancrée en bas -->
+    <div class="thanks-container">
+        <h1 class="thanks" style="margin: 0;">SPECIAL THANKS TO: <span style="color: #ff6600;">SISTR0o</span></h1>
+    </div>
+</div>
+</body>
+</html>
